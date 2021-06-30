@@ -1,0 +1,35 @@
+html, body{
+    margin:0;
+    padding:0;
+}
+
+h1, h2, ul{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    font-size:2rem;
+}
+
+h2{
+    font-size:1.5rem;
+}
+
+span, ul, input, button {
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border:none;
+    cursor: pointer;
+}
+
+ul{
+    list-style:none;
+}

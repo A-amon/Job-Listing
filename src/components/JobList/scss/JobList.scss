@@ -1,0 +1,38 @@
+@import "../../../styles/scss/color.scss";
+
+.jobs__zero{
+    display: block;
+    text-align: center;
+}
+
+.job{
+    margin-top:4rem;
+    box-shadow:0 10px 10px $light-gray;
+
+    &:nth-child(1){
+        margin-top: 1.5rem;
+    }
+}
+
+.job-enter{
+    opacity: 0;
+    transform:translateX(-50px);
+}
+
+.job-enter-active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.job-exit{
+    opacity:1;
+}
+
+.job-enter-active, .job-exit-active{
+    transition:opacity 0.5s, transform 0.5s;
+}
+
+.job-exit-active{
+    opacity:0;
+    transform: translateX(100px);
+}

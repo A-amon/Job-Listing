@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react"
+import Searchbar from './components/Searchbar/Searchbar'
+import JobList from "./components/JobList/JobList"
+import { initJobs, addFilter, removeFilter, clearFilters } from './redux/actions'
+import './styles/css/app.css'
+import { useSelector, useDispatch } from "react-redux"
 
 function App() {
+  const jobs = useSelector(state => state.jobs)
+  const filters = useSelector(state => state.filters)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(initJobs())
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <div className="header__container">
+          <Searchbar
+            filters={filters}
+            onSubmit={search => dispatch(addFilter(search))}
+            onRemove={filter => dispatch(removeFilter(filter))}
+            onClear={e => dispatch(clearFilters())}
+          />
+        </div>
       </header>
+      <main>
+        <JobList jobs={jobs} onFilter={tag => dispatch(addFilter(tag))} />
+      </main>
     </div>
   );
 }

@@ -1,0 +1,133 @@
+@import "../../../styles/scss/color.scss";
+@import "../../../styles/scss/breakpoints.scss";
+
+.job{
+    padding:2rem;
+    background:$white;
+    position: relative;
+    border-radius: 5px;
+    font-size: 0.9rem;
+
+    *{
+        font-size: inherit;
+        color: inherit;
+    }
+
+    &::before{
+        content:'';
+        position: absolute;
+        top:0;
+        left: 0;
+        height: 100%;
+        width: 10px;
+        background: $dark-grayish-cyan;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+    }
+
+    img{
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        top:-2rem;
+        left:2rem;
+    }
+
+    &__content{
+        margin-top:1rem;
+    }
+
+    &__company, &__tag button{
+        color: $dark-grayish-cyan;
+        font-weight: bold;
+    }
+
+    &__header{
+        display: flex;
+        align-items: center;
+        .job__status{
+            display: block;
+            padding:0.3rem 0.5rem;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 50px;
+            color:$white;
+            font-size: 0.8rem;
+            &--new{
+                background: $dark-grayish-cyan;
+            }
+            &--featured{
+                background: $very-dark-grayish-cyan;
+            }
+        }
+    }
+
+   
+
+    &__title{
+        font-size: 1rem;
+        margin:0.5rem 0;
+        color:$very-dark-grayish-cyan;
+        &:hover{
+            color:$dark-grayish-cyan;
+        }
+    }
+
+    &__conditions, &__tags{
+        display: flex;
+        align-items: center;
+        flex-wrap:wrap;
+    }
+
+    &__conditions{
+        color:$dark-grayish-cyan;
+    }
+
+    &__condition, &__tag{
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__condition{
+        &:not(.job__condition--date){
+            list-style: initial;
+            list-style-position: inside;
+        }
+    }
+
+    &__tag button{
+        padding:0.5rem;
+        background-color:$light-grayish-cyan2;
+        border-radius: 5px;
+        &:hover{
+            background-color:$desaturated-dark-cyan;
+            color:$light-grayish-cyan;
+        }
+    }
+
+    @include tablet-query{
+        display: flex;
+        align-items: center;
+
+        img{
+            position: relative;
+            top:unset;
+            left:unset;
+            height: 100%;
+            width: auto;
+            margin-right: 1.5rem;
+        }
+
+        &__content{
+            flex:1;
+            margin:0;
+            display: flex;
+            align-items: center;
+        }
+
+        .col{
+            flex:1;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Job Listing App",
+  "name": "Job Listing App",
+  "desc": "A simple application for searching jobs",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,0 +1,43 @@
+@import "../../../styles/scss/color.scss";
+
+.searchbar{
+    background:$white;
+    padding:1rem;
+    border-radius: 5px;
+    input{
+        border:none;
+        width: 100%;
+        &:focus{
+            outline:none;
+        }
+    }
+
+    &__filters{
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+
+        .filters__clear{
+            font-size: 0.8rem;
+            margin-top:0.5rem;
+            background:none;
+            color: $dark-grayish-cyan;
+            font-weight: bold;
+            margin-left:auto;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        .filter__tags{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                margin-right: 3rem;
+                margin-top:0.5rem;
+            }
+        }
+    }
+
+   
+}
