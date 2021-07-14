@@ -6,3 +6,6 @@
 
 <strong>Note:</strong> The data used is imported from a json file.
 
+## Features
+* List all jobs
+* Filter jobs by tags
